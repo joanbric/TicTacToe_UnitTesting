@@ -22,7 +22,7 @@
 
 
 <Score {score} />
-<div role="row">
+<div role="grid" aria>
     <Box {turn} on:click={()=>{moves[0][0] = turn}} />
     <Box {turn} on:click={()=>{moves[0][1] = turn}} />
 	<Box {turn} on:click={()=>{moves[0][2] = turn}} />

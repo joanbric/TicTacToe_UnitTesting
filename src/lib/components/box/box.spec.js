@@ -9,26 +9,26 @@ describe('Box component', () => {
         }});
 	});
 
-	it('Should disable if clicked', () => {
-		const box = screen.getByRole('box');
-		fireEvent.click(box);
+	it('Should disable if clicked', async () => {
+		const box = screen.getByRole('gridcell');
+		await fireEvent.click(box);
 
 		expect(box.disabled).toBe(true);
 	});
 
-	it('Should has O if its Os turn', () => {
-        const box = screen.getByRole('box');
-		fireEvent.click(box);
+	it('Should has O if its Os turn', async () => {
+        const box = screen.getByRole('gridcell');
+		await fireEvent.click(box);
 		expect(box.textContent).toBe('O');
 	});
     
-    it('Should has X if its Xs turn', () => {
+    it('Should has X if its Xs turn', async () => {
         cleanup();
         render(Box, {props: {
             turn: 'X',
         }});
-        const box = screen.getByRole('box');
-        fireEvent.click(box);
+        const box = screen.getByRole('gridcell');
+        await fireEvent.click(box);
         expect(box.textContent).toBe('X');
     })
 

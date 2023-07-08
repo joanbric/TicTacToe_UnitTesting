@@ -63,6 +63,7 @@ describe('calculateGame', () => {
 			];
 
 			expectCalculateGame(moves, results.X_WON);
+            
 		});
 	});
 

@@ -9,4 +9,4 @@
 
     }
 </script>
-<button role="box" on:click={activeBox}></button>
+<button role="gridcell" on:click={activeBox}></button>

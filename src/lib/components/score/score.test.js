@@ -8,17 +8,18 @@ describe('Score component', () => {
 	});
 
 	it('Should has the role score', () => {
-		screen.getByRole('score');
+		screen.getByRole('contentinfo');
 	});
 
 	it('Should contain score for each player', () => {
-		const score = screen.getByRole('score');
+		const scoreChildren = [...screen.getByRole('contentinfo').childNodes];
 
-		const playerX = score.querySelector('.player.x');
-		const playerO = score.querySelector('.player.o');
+		const playerX = screen.getByRole('status', {name: 'playerX'});
+		const playerO = screen.getByRole('status', {name: 'playerO'});
 
-		expect(playerX).toBeTruthy();
-		expect(playerO).toBeTruthy();
+        expect(scoreChildren).toContain(playerX);
+        expect(scoreChildren).toContain(playerO);
+
 	});
 
 	it('Should display X->4 and O->5', () => {
